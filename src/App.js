@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Components/Navigation/Navigation";
 import Home from "./Views/Home/Home";
 import Products from "./Views/Products/Products";
+import Footer from "./Components/Footer/Footer";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
           <Products />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
