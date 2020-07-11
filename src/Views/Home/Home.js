@@ -29,8 +29,12 @@ export default function Home() {
                 <div className="container welcome__services">
                     <div className="row services p-5">
                         <div className="col-12 col-lg-4 text-center">
-                            <i className="fas fa-home icon"></i>
-                            <h2>Jardins</h2>
+                            <img
+                                src={require("../../assets/img/garden.svg")}
+                                alt="garden"
+                                className="icon"
+                            ></img>
+                            <h2 className="mt-3">Jardins</h2>
                             <p>
                                 {" "}
                                 Lorem ipsum dolor sit, amet consectetur
@@ -39,8 +43,12 @@ export default function Home() {
                             <Link to="/">En savoir plus</Link>
                         </div>
                         <div className="col-12 col-lg-4 text-center">
-                            <i className="fas fa-city icon"></i>
-                            <h2>Produits</h2>
+                            <img
+                                src={require("../../assets/img/plant.svg")}
+                                alt="plant"
+                                className="icon"
+                            ></img>
+                            <h2 className="mt-3">Produits</h2>
                             <p>
                                 {" "}
                                 Lorem ipsum dolor sit, amet consectetur
@@ -49,8 +57,12 @@ export default function Home() {
                             <Link to="/">En savoir plus</Link>
                         </div>
                         <div className="col-12 col-lg-4 text-center">
-                            <i className="fas fa-toilet icon"></i>
-                            <h2>Entretien</h2>
+                            <img
+                                src={require("../../assets/img/shovel.svg")}
+                                alt="entretien"
+                                className="icon"
+                            ></img>
+                            <h2 className="mt-3">Entretien</h2>
                             <p>
                                 {" "}
                                 Lorem ipsum dolor sit, amet consectetur
