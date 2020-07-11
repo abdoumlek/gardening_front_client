@@ -1,4 +1,7 @@
 .footer {
-  background-color: rgb(223, 222, 222);
-  min-height: 200px;
+    background-color: rgb(223, 222, 222);
+    min-height: 200px;
+}
+.fb-link {
+  color: #ff641c;
 }
