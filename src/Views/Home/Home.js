@@ -6,7 +6,7 @@ export default function Home() {
         <div>
             <div className="home__welcome">
                 <div className="container-fluid Home__welcome-container">
-                    <div className="text-container">
+                    <div className="text-container mt-4">
                         <h1 className="Home__title">Plantes & jardins</h1>
                         <p className="Home__paragraph">
                             consectetur adipisicing elit. Possimus magnam quo
@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
                 <div className="container welcome__services">
                     <div className="row services p-5">
-                        <div className="col-12 col-lg-4 text-center">
+                        <div className="col-12 col-lg-4 text-center services-details">
                             <img
                                 src={require("../../assets/img/garden.svg")}
                                 alt="garden"
@@ -40,9 +40,11 @@ export default function Home() {
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit.
                             </p>
-                            <Link to="/">En savoir plus</Link>
+                            <Link to="/" className="plus-link">
+                                En savoir plus
+                            </Link>
                         </div>
-                        <div className="col-12 col-lg-4 text-center">
+                        <div className="col-12 col-lg-4 text-center services-details">
                             <img
                                 src={require("../../assets/img/plant.svg")}
                                 alt="plant"
@@ -54,9 +56,11 @@ export default function Home() {
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit.
                             </p>
-                            <Link to="/">En savoir plus</Link>
+                            <Link to="/" className="plus-link">
+                                En savoir plus
+                            </Link>
                         </div>
-                        <div className="col-12 col-lg-4 text-center">
+                        <div className="col-12 col-lg-4 text-center services-details">
                             <img
                                 src={require("../../assets/img/shovel.svg")}
                                 alt="entretien"
@@ -68,7 +72,9 @@ export default function Home() {
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit.
                             </p>
-                            <Link to="/">En savoir plus</Link>
+                            <Link to="/" className="plus-link">
+                                En savoir plus
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -90,36 +96,40 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="row mt-5">
-                    <div className="col-12 col-lg-4 text-center ">
-                        <h2> 100</h2>
-                        <h3>Clients </h3>
-                        <h4>satisfaits par nos services</h4>
-                        <p>
+                    <div className="col-12 col-lg-4 text-center card services-details">
+                        <h3 className="text-dec mb-3">100 </h3>
+                        <h4>Clients satisfaits par nos services</h4>
+                        <p className="services-text text-justify">
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit.
                         </p>
+                        <Link to="/" className="plus-link">
+                            S'inscrire
+                        </Link>
                     </div>
-                    <div className="col-12 col-lg-4 text-center">
-                        <h2> 200</h2>
-                        <h3>Plantes</h3>
-                        <h4>de différentes tailles</h4>
-                        <p>
+                    <div className="col-12 col-lg-4 text-center card services-details">
+                        <h3 className="text-dec mb-3">200 </h3>
+                        <h4>Plantes de différentes tailles</h4>
+                        <p className="services-text text-justify">
                             {" "}
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit.
                         </p>
-                        <Link to="/">En savoir plus</Link>
+                        <Link to="/" className="plus-link">
+                            En savoir plus
+                        </Link>
                     </div>
-                    <div className="col-12 col-lg-4 text-center">
-                        <h2>14</h2>
-                        <h3>Jours</h3>
-                        <h4>Suffisent pour transformer votre jardin</h4>
-                        <p>
+                    <div className="col-12 col-lg-4 text-center card services-details">
+                        <h3 className="text-dec mb-3">14 </h3>
+                        <h4>Jours suffisent pour transformer votre jardin</h4>
+                        <p className=" services-text text-justify">
                             {" "}
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit.
                         </p>
-                        <Link to="/">Demander un devis</Link>
+                        <Link to="/" className="plus-link">
+                            Demander un devis
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -128,24 +138,12 @@ export default function Home() {
                     <div className="row">
                         <div className="col-12 text-center p-5">
                             <h2> Galerie</h2>
-                            <span className="mx-1">
-                                <Link to="/">Tout</Link>
-                            </span>
-                            <span className="mx-1">
-                                <Link to="/">Jardins</Link>
-                            </span>
-                            <span className="mx-1">
-                                <Link to="/">Plantes d'intérieurs</Link>
-                            </span>
-                            <span className="mx-1">
-                                <Link to="/">Plantes d'extérieur</Link>
-                            </span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-12 col-lg-4">
                             <div className="portfolio my-3">
-                                <div className="portfolio-image">
+                                <div className="portfolio-image text-center">
                                     <img
                                         className="rounded img-fluid "
                                         src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/oscar-ochoa-WDGfsUO3ZSI-unsplash_VASF0Pf6Pnb2.jpg"
@@ -163,9 +161,9 @@ export default function Home() {
                         </div>
                         <div className="col-12 col-lg-4">
                             <div className="portfolio my-3">
-                                <div className="portfolio-image">
+                                <div className="portfolio-image text-center">
                                     <img
-                                        className="rounded img-fluid "
+                                        className="rounded img-fluid"
                                         src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/tim-cooper-XfqGuWevmvs-unsplash_blxI5AEGaj4.jpg"
                                         alt="Somerest"
                                     />
@@ -181,7 +179,7 @@ export default function Home() {
                         </div>
                         <div className="col-12 col-lg-4">
                             <div className="portfolio my-3">
-                                <div className="portfolio-image">
+                                <div className="portfolio-image text-center">
                                     <img
                                         className="rounded img-fluid "
                                         src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/shekhar-chandra-sahu-72P_hMW2l_g-unsplash_6Md5qI8a-.jpg"
@@ -199,7 +197,7 @@ export default function Home() {
                         </div>
                         <div className="col-12 col-lg-4">
                             <div className="portfolio my-3">
-                                <div className="portfolio-image">
+                                <div className="portfolio-image text-center">
                                     <img
                                         className="rounded img-fluid "
                                         src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/victor-malyushev-w_N-XCjiM0o-unsplash_WzsP1K6EFrl.jpg"
@@ -217,7 +215,7 @@ export default function Home() {
                         </div>
                         <div className="col-12 col-lg-4">
                             <div className="portfolio my-3">
-                                <div className="portfolio-image">
+                                <div className="portfolio-image text-center">
                                     <img
                                         className="rounded img-fluid "
                                         src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/paul-bonnar-JvtlFH37LRk-unsplash_trOww5dG06.jpg"
@@ -235,7 +233,7 @@ export default function Home() {
                         </div>
                         <div className="col-12 col-lg-4">
                             <div className="portfolio my-3">
-                                <div className="portfolio-image">
+                                <div className="portfolio-image text-center">
                                     <img
                                         className="rounded img-fluid "
                                         src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/mitchell-luo-s56fh3HWPow-unsplash_KKB1BERBM.jpg"
@@ -251,6 +249,17 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="row">
+                        <div className="col text-center mb-5">
+                        <button
+                            className="btn btn-primary Home__btn-galery "
+                            type="submit"
+                        >
+                            Afficher plus
+                        </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
