@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navigation.css";
 
 export default function Navigation() {
   return (
-    <div>
-      <div className="navbar navbar-expand-lg sticky-top ">
+    <div className="w-100">
+      <div className="navbar navbar-expand-lg position-absolute w-100">
         <Link to="/" className="navbar-brand">
-          Logo
+        Plantes & jardins
         </Link>
         <button
           className="navbar-toggler"
@@ -16,7 +17,7 @@ export default function Navigation() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <div className="collapse navbar-collapse text-right" id="collapsibleNavbar">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to="/" className="nav-link">

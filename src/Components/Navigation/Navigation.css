@@ -1,0 +1,19 @@
+.nav-link {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav-link:hover {
+    color: #ff641c;
+    border-bottom: 1px solid #ff641c;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    color: white;
+}
+

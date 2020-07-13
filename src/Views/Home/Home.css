@@ -4,7 +4,7 @@
     padding: 0px;
     margin: 0px auto;
     overflow: visible;
-    height: 444px;
+    height: 530px;
     color: whitesmoke;
     text-align: center;
     padding-top: 150px;
@@ -27,16 +27,24 @@
     border: none;
 }
 
-.Home__bnt-about-us:hover{
-  color: rgb(42, 125, 46);
+.Home__bnt-about-us:hover {
+    color: rgb(42, 125, 46);
 }
 .Home__bnt-request {
     font-family: Montserrat;
     margin-left: 20px !important;
-    border-radius: 30px;
+    /*border-radius: 30px;
     background-color: white;
     border: none;
-    color: rgb(42, 125, 46);
+    color: rgb(42, 125, 46);*/
+
+    text-align: center;
+    color: #f39200;
+    letter-spacing: 0.1rem;
+    border: 2px solid #f39200;
+    border-radius: 80px;
+    background-color: none;
+    font-weight: 600;
 }
 
 .Home__bnt-request:hover {
@@ -79,4 +87,54 @@
     .welcome__services {
         margin-top: -90px;
     }
+}
+
+@media (max-width: 992px) {
+    .services-details {
+        padding-block-end: 50px;
+    }
+
+    .services-text {
+        text-align: center !important;
+    }
+}
+
+.plus-link {
+    color: #ff641c;
+    border-bottom: 1px solid white;
+}
+
+.plus-link:hover {
+    color: #ff641c;
+    text-decoration: none;
+    border-bottom: 1px solid #ff641c;
+}
+
+.text-dec {
+    color: #ff641c;
+    font-weight: 900;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    border: none;
+}
+
+.Home__btn-galery {
+    text-align: center;
+    color: #f39200;
+    letter-spacing: 0.1rem;
+    border: 2px solid #f39200;
+    border-radius: 80px;
+    background-color: white;
+    font-weight: 600;
+}
+
+.Home__btn-galery:hover {
+    color: white;
+    background-color: #f39200;
+    border: none;
 }
