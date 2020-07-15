@@ -1,0 +1,42 @@
+.btnSubmitForm{
+    text-align: center;
+    color: #f39200;
+    letter-spacing: 0.1rem;
+    border: 2px solid #f39200;
+    border-radius: 80px;
+    background-color: white;
+    font-weight: 600;
+}
+
+.h1contactUs{
+    text-align: center;
+    padding-top: 70px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: white;
+}
+
+.h2contactUs{
+    text-align: center;
+    padding-top: 15px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: white;
+}
+
+.contactForm{
+    padding-left: 25%;
+}
+
+.contactContainer{
+    background: url(https://ik.imagekit.io/cjvyejrxtm/k8-xM9904Jea_w-unsplash_5ih2_d2_V.jpg)
+    center center / cover no-repeat rgb(22, 48, 21);
+padding: 0px;
+margin: 0px auto;
+overflow: visible;
+height: 220px;
+color: whitesmoke;
+text-align: center;
+font-family: Montserrat;
+font-weight: bold;
+}
