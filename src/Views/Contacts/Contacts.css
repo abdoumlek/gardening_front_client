@@ -1,4 +1,4 @@
-.btnSubmitForm{
+.btnSubmitForm {
     text-align: center;
     color: #f39200;
     letter-spacing: 0.1rem;
@@ -8,7 +8,7 @@
     font-weight: 600;
 }
 
-.h1contactUs{
+.h1contactUs {
     text-align: center;
     padding-top: 70px;
     font-family: Montserrat;
@@ -16,7 +16,7 @@
     color: white;
 }
 
-.h2contactUs{
+.h2contactUs {
     text-align: center;
     padding-top: 15px;
     font-family: Montserrat;
@@ -24,19 +24,35 @@
     color: white;
 }
 
-.contactForm{
-    padding-left: 25%;
+.contactContainer {
+    background: url(https://ik.imagekit.io/cjvyejrxtm/k8-xM9904Jea_w-unsplash_5ih2_d2_V.jpg)
+        center center / cover no-repeat rgb(22, 48, 21);
+    padding: 0px;
+    margin: 0px auto;
+    overflow: visible;
+    height: 300px;
+    color: whitesmoke;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: bold;
 }
 
-.contactContainer{
-    background: url(https://ik.imagekit.io/cjvyejrxtm/k8-xM9904Jea_w-unsplash_5ih2_d2_V.jpg)
-    center center / cover no-repeat rgb(22, 48, 21);
-padding: 0px;
-margin: 0px auto;
-overflow: visible;
-height: 220px;
-color: whitesmoke;
-text-align: center;
-font-family: Montserrat;
-font-weight: bold;
+
+
+.contactRowContainer {
+    margin-top: -90px;
+    background-color: white;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.note {
+    font-size: 12px;
+}
+
+.row{
+    margin: auto;
 }
