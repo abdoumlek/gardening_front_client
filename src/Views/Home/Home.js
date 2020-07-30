@@ -6,7 +6,7 @@ export default function Home() {
         <div>
             <div className="home__welcome">
                 <div className="container-fluid Home__welcome-container">
-                    <div className="text-container mt-4">
+                    <div className="text-container mt-lg-4">
                         <h1 className="Home__title">Plantes & jardins</h1>
                         <p className="Home__paragraph">
                             consectetur adipisicing elit. Possimus magnam quo
