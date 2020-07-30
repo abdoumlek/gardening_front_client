@@ -11,7 +11,7 @@ export default function Contacts() {
                 </h2>
             </div>
             <div className=" container contactRowContainer">
-                <div className=" row col-12 p-5 d-flex justify-content-center align-items-center">
+                <div className=" row col-12 p-lg-5 p-1 d-flex justify-content-center align-items-center">
                     <p className="mt-5">
                         Afin de répondre efficacement à votre demande, veuillez
                         sélectionner un sujet dans la liste suivante.
