@@ -20,6 +20,12 @@
     font-size: 20px;
 }
 
+@media only screen and (max-width: 320px) {
+    .Home__paragraph {
+        margin-bottom: 0;
+    }
+}
+
 .Home__bnt-about-us {
     font-family: Montserrat;
     border-radius: 80px;
@@ -27,6 +33,7 @@
     border:2px solid #ffac45;
     letter-spacing: 0.1rem;
     font-weight: 600;
+    margin:5px;
 }
 
 .Home__bnt-about-us:hover {
@@ -34,8 +41,9 @@
 }
 .Home__bnt-request {
     font-family: Montserrat;
-    margin-left: 20px !important;
-    /*border-radius: 30px;
+    margin:5px;
+    /*margin-left: 20px !important;
+    border-radius: 30px;
     background-color: white;
     border: none;
     color: rgb(42, 125, 46);*/
