@@ -43,7 +43,7 @@ export default function Navigation() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">
+                            <Link to="/contacts" className="nav-link">
                                 Contacts
                             </Link>
                         </li>
