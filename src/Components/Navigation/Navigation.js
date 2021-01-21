@@ -32,6 +32,7 @@ export default function Navigation() {
                                 Produits
                             </Link>
                         </li>
+                        {/*
                         <li className="nav-item">
                             <Link to="/" className="nav-link">
                                 Devis
@@ -41,7 +42,7 @@ export default function Navigation() {
                             <Link to="/" className="nav-link">
                                 Galerie
                             </Link>
-                        </li>
+                        </li>*/}
                         <li className="nav-item">
                             <Link to="/contacts" className="nav-link">
                                 Contacts
