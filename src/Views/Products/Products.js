@@ -3,13 +3,19 @@ import { toast } from "react-toastify";
 import "./Products.css";
 import Product from "../../Components/Product/Product";
 import productService from "../../Services/productService";
+import { useDispatch, useSelector } from "react-redux";
+import * as CartActions from "../../Store/CartActions"
 
 export default function Products() {
+  const dispatch = useDispatch();
+
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [productsLoading, setProductsLoading] = useState(false);
   const [productsError, setProductsError] = useState(false);
-  
+  const currentCart = useSelector(state => state.cartItems);
+  console.log(currentCart);
+
   useEffect(() => {
     const fetchProducts = async () => {
       setProductsLoading(true);
@@ -25,14 +31,15 @@ export default function Products() {
     };
     fetchProducts();
   }, []);
-  
+
   const openDetails = (id) => {
     let productToDisplay = products.find((p) => p.id === id);
     console.log(productToDisplay);
   };
   const addToCart = (id) => {
-    setCart([...cart, id]);
     let productToDisplay = products.find((p) => p.id === id);
+    console.log("added",productToDisplay);
+    dispatch(CartActions.addProduct(productToDisplay,1));
     toast.success(productToDisplay.name + " added to cart");
   };
   let productsHtml = products.map((p) => (

@@ -21,7 +21,7 @@ export default function Product({
         <h2>{name}</h2>
         <p>{description} </p>
         <p>
-          Prix <span>{price} TND</span>
+          Prix <span>{Number(price).toFixed(3)} TND</span>
         </p>
       </div>
       <div>
