@@ -13,16 +13,14 @@ const ImageLoading = ({ imageUrl, width, height, alt }) => {
     <div className="image-container d-inline-block">
       <img
         alt={alt}
-        className={lowResClass}
-        style={{ height: height??"auto", width: width??"auto" }}
+        className={lowResClass + " w-100" }
         src={`https://ik.imagekit.io/cjvyejrxtm/${imageUrl}?tr=h-${height??"auto"},w-${width??"auto"},bl-${Math.ceil(
           height / 50
         )}`}
       ></img>
       <img
         alt={alt}
-        className={highResClass}
-        style={{ height: height, width: width }}
+        className={highResClass + " w-100"}
         src={`https://ik.imagekit.io/cjvyejrxtm/${imageUrl}?tr=h-${height},w-${width}`}
         onLoad={highResImgLoaded}
       ></img>
