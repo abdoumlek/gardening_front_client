@@ -34,4 +34,5 @@
 .products__header {
   font-size: 4rem;
   color: white;
+  text-shadow: 2px 2px #0000002f;
 }
