@@ -7,7 +7,7 @@ export default function Contacts() {
             <div className="contactContainer">
                 <h1 className="h1contactUs">Contactez-nous</h1>
                 <h2 className="h2contactUs">
-                    Avez-vous des questions ou des suggestions ?
+                    Avez-vous une demande, des questions ou des suggestions ?
                 </h2>
             </div>
             <div className=" container contactRowContainer">
@@ -28,17 +28,18 @@ export default function Contacts() {
                                         <option disabled selected>
                                             Sélectionnez un sujet
                                         </option>
-                                        {/* <option value="1">Mon compte client</option> */}
+                                        <option value="1">Demander un devis pour une transformation dans mon jardin</option>
                                         <option value="2">
-                                            Commander un produit non existant
+                                            Demander un devis pour des travaux d'entretien dans mon jardin
                                         </option>
                                         <option value="3">
-                                            J'ai besoin d'un conseil
+                                            Commander un produit non existant
                                         </option>
                                         <option value="4">
                                             Question concernat le délai de
                                             livraison d'un produit
                                         </option>
+                                        
                                         <option value="5">Autre</option>
                                     </select>
                                 </div>

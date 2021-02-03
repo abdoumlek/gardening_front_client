@@ -1,5 +1,6 @@
 import React from "react";
 import "./Product.css";
+import ImageLoading from "../ImageLoading/ImageLoading"
 export default function Product({
   id,
   badge,
@@ -13,14 +14,14 @@ export default function Product({
   return (
     <div className="product__card">
       <div className="product__card-content">
-        <img alt={name} src={imgUrl}></img>
+      <ImageLoading alt={name} height={150} width={150} imageUrl={imgUrl} />
         {badge ? (
           <span className="product__badge py-1 px-3">{badge}</span>
         ) : null}
         <h2>{name}</h2>
         <p>{description} </p>
         <p>
-          Prix <span>{price}</span>
+          Prix <span>{price} TND</span>
         </p>
       </div>
       <div>

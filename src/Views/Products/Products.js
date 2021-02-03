@@ -36,11 +36,11 @@ export default function Products() {
   let productsHtml = products.map((p) => (
     <div className="col-12 col-lg-4 text-center mb-5" key={p.id}>
       <Product
-        badge={p.badge}
+        badge={null}
         name={p.name}
-        description={p.shortDescription}
-        price={p.price}
-        imgUrl={p.imgUrl}
+        description={p.category}
+        price={p.selling_price}
+        imgUrl={p.photo}
         id={p.id}
         openDetails={openDetails}
         addToCart={addToCart}
@@ -56,9 +56,9 @@ export default function Products() {
         <h1 className="products__header">Shop</h1>
       </div>
       <div className="container">
-        <div className="row">{content}</div>
+        <div className="row mt-5">{content}</div>
       </div>
-      <div className="container-fluid roses__welcome-container">
+      {/* <div className="container-fluid roses__welcome-container">
         <div>
           <h1 className="roses__header">Roses</h1>
           <p className="roses__description">
@@ -67,8 +67,8 @@ export default function Products() {
         </div>
       </div>
       <div className="container">
-        <div className="row">{content}</div>
-      </div>
+        <div className="row mt-5">{content}</div>
+      </div> */}
     </div>
   );
 }
