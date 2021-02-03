@@ -9,6 +9,7 @@ export default function Products() {
   const [products, setProducts] = useState([]);
   const [productsLoading, setProductsLoading] = useState(false);
   const [productsError, setProductsError] = useState(false);
+  
   useEffect(() => {
     const fetchProducts = async () => {
       setProductsLoading(true);
@@ -24,6 +25,7 @@ export default function Products() {
     };
     fetchProducts();
   }, []);
+  
   const openDetails = (id) => {
     let productToDisplay = products.find((p) => p.id === id);
     console.log(productToDisplay);

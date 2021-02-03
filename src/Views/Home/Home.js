@@ -1,7 +1,38 @@
-import React from "react";
+import React ,{useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import Gallery from "../../Components/Gallery/Gallery";
+import galleriesService from "../../Services/galleriesService";
+
 import "./Home.css";
 export default function Home() {
+
+
+  const [galleries, setgalleries] = useState([]);
+  const [galleriesLoading, setgalleriesLoading] = useState(false);
+  const [galleriesError, setgalleriesrror] = useState(false);
+  
+  useEffect(() => {
+    const fetchgalleries = async () => {
+      setgalleriesLoading(true);
+      setgalleriesrror(false);
+      try {
+        console.log("get gallleries")
+        let response = await galleriesService.getGalleries();
+        setgalleries(response.data);
+
+      } catch(e) {
+        setgalleriesrror(true);
+
+      } finally {
+        setgalleriesLoading(false);
+      }
+    };
+    fetchgalleries();
+  }, []);
+  
+  let galleryHtml = galleries?.map((g) => (
+    <Gallery key={g.id} name={g.name} description={g.description} img={g.photo} />
+  ));
   return (
     <div>
       <div className="home__welcome">
@@ -118,112 +149,24 @@ export default function Home() {
         </div>
         <div className="row">
           <div className="col-12 ">
-            <p className="small-text">(*) pour un jardin de taille moyenne ne dépassants pas le 10m²</p>
-            </div></div>
+            <p className="small-text">
+              (*) pour un jardin de taille moyenne ne dépassants pas le 10m²
+            </p>
+          </div>
+        </div>
       </div>
       <div className="container-fluid beige-block mt-5">
         <div className="container">
           <div className="row">
-            <div className="col-12 text-center p-5">
+            <div className="col-12 text-center py-5">
               <h2> Quelques transformations faites par nos soins</h2>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-lg-4">
-              <div className="portfolio my-3">
-                <div className="portfolio-image text-center">
-                  <img
-                    className="rounded img-fluid "
-                    src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/oscar-ochoa-WDGfsUO3ZSI-unsplash_VASF0Pf6Pnb2.jpg"
-                    alt="Somerest"
-                  />
-                </div>
-                <div className="portfolio-details text-center pt-5">
-                  <h3>Somerest</h3>
-                  <p>Mirum est notare quam littera gothica, quam nunc.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4">
-              <div className="portfolio my-3">
-                <div className="portfolio-image text-center">
-                  <img
-                    className="rounded img-fluid"
-                    src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/tim-cooper-XfqGuWevmvs-unsplash_blxI5AEGaj4.jpg"
-                    alt="Somerest"
-                  />
-                </div>
-                <div className="portfolio-details text-center pt-5">
-                  <h3>Somerest</h3>
-                  <p>Mirum est notare quam littera gothica, quam nunc.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4">
-              <div className="portfolio my-3">
-                <div className="portfolio-image text-center">
-                  <img
-                    className="rounded img-fluid "
-                    src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/shekhar-chandra-sahu-72P_hMW2l_g-unsplash_6Md5qI8a-.jpg"
-                    alt="Somerest"
-                  />
-                </div>
-                <div className="portfolio-details text-center pt-5">
-                  <h3>Somerest</h3>
-                  <p>Mirum est notare quam littera gothica, quam nunc.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4">
-              <div className="portfolio my-3">
-                <div className="portfolio-image text-center">
-                  <img
-                    className="rounded img-fluid "
-                    src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/victor-malyushev-w_N-XCjiM0o-unsplash_WzsP1K6EFrl.jpg"
-                    alt="Somerest"
-                  />
-                </div>
-                <div className="portfolio-details text-center pt-5">
-                  <h3>Somerest</h3>
-                  <p>Mirum est notare quam littera gothica, quam nunc.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4">
-              <div className="portfolio my-3">
-                <div className="portfolio-image text-center">
-                  <img
-                    className="rounded img-fluid "
-                    src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/paul-bonnar-JvtlFH37LRk-unsplash_trOww5dG06.jpg"
-                    alt="Somerest"
-                  />
-                </div>
-                <div className="portfolio-details text-center pt-5">
-                  <h3>Somerest</h3>
-                  <p>Mirum est notare quam littera gothica, quam nunc.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4">
-              <div className="portfolio my-3">
-                <div className="portfolio-image text-center">
-                  <img
-                    className="rounded img-fluid "
-                    src="https://ik.imagekit.io/cjvyejrxtm/tr:w-400,h-400/mitchell-luo-s56fh3HWPow-unsplash_KKB1BERBM.jpg"
-                    alt="Somerest"
-                  />
-                </div>
-                <div className="portfolio-details text-center pt-5">
-                  <h3>Somerest</h3>
-                  <p>Mirum est notare quam littera gothica, quam nunc.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="row">{galleryHtml}</div>
           <div className="row">
             <div className="col text-center mb-5">
               {/* <button
-                className="btn btn-primary Home__btn-galery "
+                className="btn btn-primary Home__btn-gallery "
                 type="submit"
               >
                 Afficher plus

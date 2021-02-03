@@ -14,8 +14,8 @@ const ImageLoading = ({ imageUrl, width, height, alt }) => {
       <img
         alt={alt}
         className={lowResClass}
-        style={{ height: height, width: width }}
-        src={`https://ik.imagekit.io/cjvyejrxtm/${imageUrl}?tr=h-${height},w-${width},bl-${Math.ceil(
+        style={{ height: height??"auto", width: width??"auto" }}
+        src={`https://ik.imagekit.io/cjvyejrxtm/${imageUrl}?tr=h-${height??"auto"},w-${width??"auto"},bl-${Math.ceil(
           height / 50
         )}`}
       ></img>
