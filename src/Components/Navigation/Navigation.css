@@ -8,6 +8,10 @@
     color: #ff641c;
     border-bottom: 1px solid #ff641c;
 }
+.nav-link.active {
+    color: #ff641c;
+    border-bottom: 1px solid #ff641c;
+}
 
 .navbar {
     background: rgba(0, 0, 0, 0.2);
@@ -17,3 +21,7 @@
     color: white;
 }
 
+.burger-menu{
+    width: 25px;
+    height: 30px;
+}

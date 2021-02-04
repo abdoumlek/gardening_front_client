@@ -25,7 +25,7 @@ export default function Contacts() {
                                         className="form-control mb-4"
                                         required
                                     >
-                                        <option disabled selected>
+                                        <option disabled >
                                             Sélectionnez un sujet
                                         </option>
                                         <option value="1">Demander un devis pour une transformation dans mon jardin</option>
@@ -45,7 +45,7 @@ export default function Contacts() {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label for="nom">Nom* :</label>
+                                <label htmlFor="nom">Nom* :</label>
 
                                 <div>
                                     <input
@@ -58,7 +58,7 @@ export default function Contacts() {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label for="prenom">Prénom* :</label>
+                                <label htmlFor="prenom">Prénom* :</label>
 
                                 <div>
                                     <input
@@ -71,7 +71,7 @@ export default function Contacts() {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label for="email">Email :</label>
+                                <label htmlFor="email">Email :</label>
 
                                 <div>
                                     <input
@@ -83,7 +83,7 @@ export default function Contacts() {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label for="message">
+                                <label htmlFor="message">
                                     Numéro de téléphone* :
                                 </label>
 
@@ -98,7 +98,7 @@ export default function Contacts() {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label for="exampleFormControlTextarea1">
+                                <label htmlFor="exampleFormControlTextarea1">
                                     Message* :
                                 </label>
 

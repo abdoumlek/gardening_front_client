@@ -4,7 +4,8 @@ import Navigation from "./Components/Navigation/Navigation";
 import Home from "./Views/Home/Home";
 import Products from "./Views/Products/Products";
 import Footer from "./Components/Footer/Footer";
-import Contacts from "./Views/Contacts/Contacts"; // importer le composant de la page contact
+import Contacts from "./Views/Contacts/Contacts";
+import Cart from "./Views/Cart/Cart"
 import "./App.css";
 import { Provider } from "react-redux";
 import store from "./Store/CartStore";
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/contacts">
             <Contacts />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
         </Switch>
         <Footer />

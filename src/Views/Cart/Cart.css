@@ -1,0 +1,20 @@
+.underlined{
+      border-bottom: solid 1px #00000075;
+}
+.table__header{
+      font-size: large;
+      font-weight: 500;
+}
+.cart__welcome-container{
+      min-height: 300px;
+      height: 60vh;
+      background-image: url(https://landscaping.vamtam.com/wp-content/uploads/2017/09/Pic-1.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}

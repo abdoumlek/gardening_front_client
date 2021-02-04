@@ -67,6 +67,7 @@ export default function Products() {
       <div className="container">
         <div className="row mt-5">{content}</div>
       </div>
+      
       {/* <div className="container-fluid roses__welcome-container">
         <div>
           <h1 className="roses__header">Roses</h1>
