@@ -10,6 +10,11 @@ export const removeProduct = (product, count) => ({
   payload: { product, count },
 });
 
+export const setUserInformations = (name, phoneNumber, address) => ({
+  type: actionTypes.SET_USER_INFORMATIONS,
+  payload: { name, phoneNumber, address },
+});
+
 export const reset = () => ({
   type: actionTypes.RESET,
   payload: null,

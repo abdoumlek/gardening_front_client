@@ -3,6 +3,9 @@ import * as actionTypes from "./CartActionTypes";
 
 const initialState = {
   cartItems: [], //{product, count}
+  name: null,
+  address: null,
+  phoneNumber: null,
 };
 
 export function rootReducer(state = initialState, action) {
@@ -13,6 +16,7 @@ export function rootReducer(state = initialState, action) {
         state.cartItems.filter((c) => c.product.id === product.id).length <= 0
       )
         return {
+          ...state,
           cartItems: [...state.cartItems, { product, count }],
         };
       else {
@@ -21,6 +25,7 @@ export function rootReducer(state = initialState, action) {
         );
         element.count += count;
         return {
+          ...state,
           cartItems: [...state.cartItems],
         };
       }
@@ -30,15 +35,20 @@ export function rootReducer(state = initialState, action) {
       const element = state.cartItems.find((c) => c.product.id === product.id);
       if (element.count <= count)
         return {
+          ...state,
           cartItems: state.cartItems.filter((c) => c.product.id !== product.id),
         };
       else {
         element.count -= count;
-        return { cartItems: [...state.cartItems] };
+        return { ...state, cartItems: [...state.cartItems] };
       }
     }
-    case actionTypes.RESET : {
-          return initialState;
+    case actionTypes.RESET: {
+     return initialState;
+    }
+    case actionTypes.SET_USER_INFORMATIONS: {
+      const { name, phoneNumber, address } = action.payload;
+      return { ...state, name, phoneNumber, address };
     }
     default:
       return state;

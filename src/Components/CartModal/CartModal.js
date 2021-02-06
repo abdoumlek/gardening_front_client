@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
+import { useDispatch } from "react-redux";
+import * as CartActions from "../../Store/CartActions";
+
 import "./CartModal.css";
 
 export default function CartModal({ show, closeModal, onSubmit }) {
+  const [name, setName] = useState(null);
+  const [address, setAddress] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (name?.length && address?.length && phoneNumber?.length)
+    dispatch(CartActions.setUserInformations(name,phoneNumber,address));
+  }, [name, address, phoneNumber])
   return (
     <ReactModal isOpen={show} className="Modal" overlayClassName="Overlay">
       <div className="container">
@@ -11,7 +23,7 @@ export default function CartModal({ show, closeModal, onSubmit }) {
       <span className="closing-button" onClick={closeModal}>X</span>
         <div className="row">
           <div className="col">
-            <form onSubmit={onSubmit}>
+            <div>
               <div className="form-group mt-5">
                 <div className="form-group">
                   <label htmlFor="nom">Nom* :</label>
@@ -22,6 +34,7 @@ export default function CartModal({ show, closeModal, onSubmit }) {
                       type="text"
                       name="lastname"
                       id="nom"
+                      onChange={v=>{setName(v.target.value)}}
                       required
                     />
                   </div>
@@ -35,6 +48,7 @@ export default function CartModal({ show, closeModal, onSubmit }) {
                       type="text"
                       name="firstname"
                       id="prenom"
+                      onChange={v=>{setAddress(v.target.value)}}
                       required
                     />
                   </div>
@@ -48,6 +62,7 @@ export default function CartModal({ show, closeModal, onSubmit }) {
                       type="text"
                       name="phone"
                       id="message"
+                      onChange={v=>{setPhoneNumber(v.target.value)}}
                       required
                     />
                   </div>
@@ -55,11 +70,11 @@ export default function CartModal({ show, closeModal, onSubmit }) {
               </div>
 
               <div className="text-center mt-5">
-                <button className="btn  btnSubmitForm mb-5" type="submit">
+                <button className="btn  btnSubmitForm mb-5" type="button" onClick={onSubmit}>
                   Valider
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

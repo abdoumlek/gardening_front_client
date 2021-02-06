@@ -9,12 +9,9 @@ import * as CartActions from "../../Store/CartActions"
 export default function Products() {
   const dispatch = useDispatch();
 
-  const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [productsLoading, setProductsLoading] = useState(false);
   const [productsError, setProductsError] = useState(false);
-  const currentCart = useSelector(state => state.cartItems);
-  console.log(currentCart);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,7 +35,6 @@ export default function Products() {
   };
   const addToCart = (id) => {
     let productToDisplay = products.find((p) => p.id === id);
-    console.log("added",productToDisplay);
     dispatch(CartActions.addProduct(productToDisplay,1));
     toast.success(productToDisplay.name + " added to cart");
   };

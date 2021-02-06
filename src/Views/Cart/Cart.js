@@ -1,11 +1,38 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+
 import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as CartActions from "../../Store/CartActions";
 import CartItem from "../../Components/CartItem/CartItem";
 import CartModal from "../../Components/CartModal/CartModal";
+import cartService from "../../Services/cartService";
 
 export default function Products() {
+  const state = useSelector((state) => state);
+
+  const submitOrder = async () => {
+    const body = {
+      order: {
+        name: state.name,
+        address: state.address,
+        phoneNumber: state.phoneNumber,
+      },
+      products: state.cartItems.map((c) => {
+        return { product_id: c.product.id, count: c.count };
+      }),
+    };
+    try {
+      await cartService.sendOrder(body);
+      toast.success("Commande envoyé avec Succés");
+      dispatch(CartActions.reset());
+    } catch (e) {
+      toast.error("error occured");
+    }
+    finally{
+      setShowModal(false);
+    }
+  };
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const currentCart = useSelector((state) => state.cartItems);
@@ -86,6 +113,7 @@ export default function Products() {
         closeModal={() => {
           setShowModal(false);
         }}
+        onSubmit={submitOrder}
       ></CartModal>
       <div className="container-fluid cart__welcome-container">
         <h1 className="products__header">Cart</h1>
