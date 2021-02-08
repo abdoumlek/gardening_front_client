@@ -9,11 +9,14 @@ import Cart from "./Views/Cart/Cart"
 import "./App.css";
 import { Provider } from "react-redux";
 import store from "./Store/CartStore";
+import CartButton from "./Components/CartButton/CartButton";
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <Navigation />
+      <CartButton></CartButton>
+
         <Switch>
           <Route exact path="/">
             <Home />
