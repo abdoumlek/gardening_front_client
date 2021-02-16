@@ -17,6 +17,13 @@
     background: rgba(0, 0, 0, 0.2);
 }
 
+@media only screen and (max-width: 991px) {
+    .navbar {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+
 .navbar-brand {
     color: white;
 }

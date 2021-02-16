@@ -16,7 +16,6 @@ export default function Home() {
       setgalleriesLoading(true);
       setgalleriesrror(false);
       try {
-        console.log("get gallleries")
         let response = await galleriesService.getGalleries();
         setgalleries(response.data);
 

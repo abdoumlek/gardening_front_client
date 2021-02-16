@@ -63,6 +63,7 @@ export default function Navigation() {
               <Link
                 to="/"
                 className={accueilActive ? "nav-link active" : "nav-link"}
+                onClick={()=>{setShowCollapsed(false)}}
               >
                 Accueil
               </Link>
@@ -71,6 +72,7 @@ export default function Navigation() {
               <Link
                 to="/products"
                 className={productActive ? "nav-link active" : "nav-link"}
+                onClick={()=>{setShowCollapsed(false)}}
               >
                 Produits
               </Link>
@@ -80,6 +82,7 @@ export default function Navigation() {
               <Link
                 to="/cart"
                 className={cartActive ? "nav-link active" : "nav-link"}
+                onClick={()=>{setShowCollapsed(false)}}
               >
                 Cart
               </Link>
@@ -89,6 +92,7 @@ export default function Navigation() {
               <Link
                 to="/contacts"
                 className={contractsActive ? "nav-link active" : "nav-link"}
+                onClick={()=>{setShowCollapsed(false)}}
               >
                 Contacts
               </Link>

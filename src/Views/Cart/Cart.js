@@ -27,7 +27,7 @@ export default function Products() {
       toast.success("Commande envoyé avec Succés");
       dispatch(CartActions.reset());
     } catch (e) {
-      toast.error("error occured");
+      toast.error("Une erreur est survenue veuillez réessayer plus tard");
     }
     finally{
       setShowModal(false);
