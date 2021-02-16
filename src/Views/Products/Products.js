@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import "./Products.css";
 import Product from "../../Components/Product/Product";
 import productService from "../../Services/productService";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as CartActions from "../../Store/CartActions"
 
 export default function Products() {

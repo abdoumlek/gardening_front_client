@@ -14,7 +14,7 @@ export default function CartModal({ show, closeModal, onSubmit }) {
   useEffect(() => {
     if (name?.length && address?.length && phoneNumber?.length)
     dispatch(CartActions.setUserInformations(name,phoneNumber,address));
-  }, [name, address, phoneNumber])
+  }, [name, address, phoneNumber, dispatch])
   return (
     <ReactModal isOpen={show} className="Modal" overlayClassName="Overlay">
       <div className="container">

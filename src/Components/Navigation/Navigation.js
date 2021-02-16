@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import "./Navigation.css";
 import { useLocation } from "react-router-dom";
 
 export default function Navigation() {
   const location = useLocation();
+  const cartItems = useSelector((state) => state?.cartItems);
   const [cartActive, setCartActive] = useState(false);
   const [productActive, setProductsActive] = useState(false);
   const [contractsActive, setContractsActive] = useState(false);
@@ -73,14 +76,15 @@ export default function Navigation() {
               </Link>
             </li>
 
-            <li className="nav-item">
+            {cartItems?.length ? (<li className="nav-item">
               <Link
                 to="/cart"
                 className={cartActive ? "nav-link active" : "nav-link"}
               >
                 Cart
               </Link>
-            </li>
+            </li>): <Redirect to="/" /> }
+            {}
             <li className="nav-item">
               <Link
                 to="/contacts"
