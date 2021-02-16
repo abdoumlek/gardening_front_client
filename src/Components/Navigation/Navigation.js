@@ -84,7 +84,7 @@ export default function Navigation() {
                 className={cartActive ? "nav-link active" : "nav-link"}
                 onClick={()=>{setShowCollapsed(false)}}
               >
-                Cart
+                Panier
               </Link>
             </li>): <Redirect to="/" /> }
             {}

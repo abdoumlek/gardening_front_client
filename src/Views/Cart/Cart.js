@@ -116,7 +116,7 @@ export default function Products() {
         onSubmit={submitOrder}
       ></CartModal>
       <div className="container-fluid cart__welcome-container">
-        <h1 className="products__header">Cart</h1>
+        <h1 className="products__header">Panier</h1>
       </div>
       <div className="container">{content}</div>
     </div>
