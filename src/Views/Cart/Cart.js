@@ -28,8 +28,7 @@ export default function Products() {
       dispatch(CartActions.reset());
     } catch (e) {
       toast.error("Une erreur est survenue veuillez réessayer plus tard");
-    }
-    finally{
+    } finally {
       setShowModal(false);
     }
   };
@@ -49,51 +48,76 @@ export default function Products() {
     });
     return Number(price + 5).toFixed(3);
   };
+  const itemsCount = () =>{
+    let count = 0;
+    currentCart.forEach((c) => {
+      count +=  c.count;
+    });
+    return count;
+  }
+  const calculTotalSansLivraison = () => {
+    let price = 0;
+    currentCart.forEach((c) => {
+      price += c.product.selling_price * c.count * (1 - c.product.discount);
+    });
+    return Number(price).toFixed(3);
+  };
   let productsHtml = currentCart.map((p) => (
-    <div className="row underlined" key={p.product.id}>
-      <CartItem
-        discount={p.product.discount}
-        name={p.product.name}
-        description={p.product.category}
-        price={p.product.selling_price}
-        imgUrl={p.product.photo}
-        quantity={p.count}
-        increase={() => {
-          increaseProductCount(p.product, 1);
-        }}
-        decrease={() => {
-          decreaseProductCount(p.product, 1);
-        }}
-        delete_item={() => {
-          decreaseProductCount(p.product, p.count);
-        }}
-      />
-    </div>
+    <CartItem
+      key={p.product.id}
+      discount={p.product.discount}
+      name={p.product.name}
+      description={p.product.category}
+      price={p.product.selling_price}
+      imgUrl={p.product.photo}
+      quantity={p.count}
+      increase={() => {
+        increaseProductCount(p.product, 1);
+      }}
+      decrease={() => {
+        decreaseProductCount(p.product, 1);
+      }}
+      delete_item={() => {
+        decreaseProductCount(p.product, p.count);
+      }}
+    />
   ));
   let content = (
     <>
-      <div className="row underlined">
-        <div className="col table__header">Produit</div>
-        <div className="col table__header">Quantité</div>
-        <div className="col table__header">Prix Total</div>
-        <div className="col"></div>
-      </div>
-      {productsHtml}
-      <div className="row underlined">
-        <div className="col "></div>
-        <div className="col "></div>
-        <div className="col"></div>
-        <div className="col">Frais de livraison: 5.000 TND</div>
-      </div>
-      <div className="row underlined">
-        <div className="col "></div>
-        <div className="col "></div>
-        <div className="col"></div>
-        <div className="col">Total à Payer: {calculTotal()} TND</div>
-      </div>
-      <div className="row">
-        <div className="col ">
-          <button
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-9 ">
+            <div className="container">
+              <div className="row underlined mb-3 pb-3">
+                <div className="col-6 table__header">Produit</div>
+                <div className="col-2 table__header">Quantité</div>
+                <div className="col-2 table__header">Prix Unitaire</div>
+                <div className="col-2 table__header">Prix Total</div>
+              </div>
+              {productsHtml}
+            </div>
+          </div>
+          <div className="col-3 ">
+            <div className="container">
+            <div className="row mb-3 ">
+                <div className="col font-weight-bold text-center">Récapitulatif de votre commande</div>
+              </div>
+              <div className="row">
+                <div className="col-7">{itemsCount()} Produits</div>
+                <div className="col-5">{calculTotalSansLivraison()} TND</div>
+              </div>
+
+              <div className="row">
+                <div className="col-7">Prix de livraison</div>
+                <div className="col-5">5.000 TND</div>
+              </div>
+              <div className="row">
+                <div className="col-7 font-weight-bold">Total à Payer</div>
+                <div className="col-5 font-weight-bold">{calculTotal()} TND</div>
+              </div>
+              <div className="row mt-3">
+                <div className="col">
+                <button
             className="btn btn-success m-2"
             onClick={() => {
               setShowModal(true);
@@ -101,6 +125,10 @@ export default function Products() {
           >
             Confirmer La commande
           </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -118,7 +146,7 @@ export default function Products() {
       <div className="container-fluid cart__welcome-container">
         <h1 className="products__header">Panier</h1>
       </div>
-      <div className="container">{content}</div>
+      <div className="container-fluid my-5">{content}</div>
     </div>
   );
 }
