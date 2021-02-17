@@ -26,7 +26,7 @@ export default function CartItem({
             delete_item();
           }}
         >
-          delete
+          Supprimer
         </button>
       </div>
       <div className="col-2">

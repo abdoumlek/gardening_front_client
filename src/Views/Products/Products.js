@@ -36,7 +36,7 @@ export default function Products() {
   const addToCart = (id) => {
     let productToDisplay = products.find((p) => p.id === id);
     dispatch(CartActions.addProduct(productToDisplay,1));
-    toast.success(productToDisplay.name + " added to cart");
+    toast.success(productToDisplay.name + " est ajouté à votre panier");
   };
   let productsHtml = products.map((p) => (
     <div className="col-12 col-lg-4 text-center mb-5" key={p.id}>

@@ -31,7 +31,7 @@ export default function Product({
             openDetails(id);
           }}
         >
-          Details
+          Détails
         </button>
         <button
           className="btn btn-success m-2"
@@ -39,7 +39,7 @@ export default function Product({
             addToCart(id);
           }}
         >
-          Add to cart
+          Ajouter au panier
         </button>
       </div>
     </div>
