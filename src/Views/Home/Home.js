@@ -8,22 +8,22 @@ export default function Home() {
 
 
   const [galleries, setgalleries] = useState([]);
-  const [galleriesLoading, setgalleriesLoading] = useState(false);
-  const [galleriesError, setgalleriesrror] = useState(false);
+  // const [galleriesLoading, setgalleriesLoading] = useState(false);
+  // const [galleriesError, setgalleriesrror] = useState(false);
   
   useEffect(() => {
     const fetchgalleries = async () => {
-      setgalleriesLoading(true);
-      setgalleriesrror(false);
+      // setgalleriesLoading(true);
+      // setgalleriesrror(false);
       try {
         let response = await galleriesService.getGalleries();
         setgalleries(response.data);
 
       } catch(e) {
-        setgalleriesrror(true);
+        // setgalleriesrror(true);
 
       } finally {
-        setgalleriesLoading(false);
+        // setgalleriesLoading(false);
       }
     };
     fetchgalleries();

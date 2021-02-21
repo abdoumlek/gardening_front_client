@@ -5,7 +5,7 @@ import * as CartActions from "../../Store/CartActions";
 
 import "./CartModal.css";
 
-export default function CartModal({ show, closeModal, onSubmit }) {
+export default function CartModal({ show, closeModal, onSubmit, loading }) {
   const [name, setName] = useState(null);
   const [address, setAddress] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);
@@ -71,7 +71,16 @@ export default function CartModal({ show, closeModal, onSubmit }) {
 
               <div className="text-center mt-5">
                 <button className="btn  btnSubmitForm mb-5" type="button" onClick={onSubmit}>
-                  Valider
+                {loading && (
+                  <span className="min-width-button">
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                  </span>
+                )}
+                {!loading && <span>Valider</span>}
                 </button>
               </div>
             </div>

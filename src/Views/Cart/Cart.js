@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import * as CartActions from "../../Store/CartActions";
 import CartItem from "../../Components/CartItem/CartItem";
 import CartModal from "../../Components/CartModal/CartModal";
+import SuccessModal from "../../Components/SuccessModal/SuccessModal";
 import cartService from "../../Services/cartService";
 
 export default function Products() {
   const state = useSelector((state) => state);
+  const [loading, setLoading] = useState(false);
 
   const submitOrder = async () => {
     const body = {
@@ -23,17 +25,20 @@ export default function Products() {
       }),
     };
     try {
+      setLoading(true);
       await cartService.sendOrder(body);
       toast.success("Commande envoyé avec Succés");
-      dispatch(CartActions.reset());
+      setShowSuccessModal(true);
     } catch (e) {
       toast.error("Une erreur est survenue veuillez réessayer plus tard");
     } finally {
+      setLoading(false);
       setShowModal(false);
     }
   };
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const currentCart = useSelector((state) => state.cartItems);
   const increaseProductCount = (product, count) => {
     dispatch(CartActions.addProduct(product, count));
@@ -48,13 +53,13 @@ export default function Products() {
     });
     return Number(price + 5).toFixed(3);
   };
-  const itemsCount = () =>{
+  const itemsCount = () => {
     let count = 0;
     currentCart.forEach((c) => {
-      count +=  c.count;
+      count += c.count;
     });
     return count;
-  }
+  };
   const calculTotalSansLivraison = () => {
     let price = 0;
     currentCart.forEach((c) => {
@@ -99,32 +104,36 @@ export default function Products() {
           </div>
           <div className="col-3 ">
             <div className="container">
-            <div className="row mb-3 ">
-                <div className="col font-weight-bold text-center">Récapitulatif de votre commande</div>
+              <div className="row mb-3 ">
+                <div className="col font-weight-bold text-center">
+                  Récapitulatif de votre commande
+                </div>
               </div>
-              <div className="row">
+              <div className="row mt-3">
                 <div className="col-7">{itemsCount()} Produits</div>
                 <div className="col-5">{calculTotalSansLivraison()} TND</div>
               </div>
 
-              <div className="row">
+              <div className="row mt-3">
                 <div className="col-7">Prix de livraison</div>
                 <div className="col-5">5.000 TND</div>
               </div>
-              <div className="row">
+              <div className="row mt-3">
                 <div className="col-7 font-weight-bold">Total à Payer</div>
-                <div className="col-5 font-weight-bold">{calculTotal()} TND</div>
+                <div className="col-5 font-weight-bold">
+                  {calculTotal()} TND
+                </div>
               </div>
               <div className="row mt-3">
                 <div className="col">
-                <button
-            className="btn btn-success m-2"
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            Confirmer La commande
-          </button>
+                  <button
+                    className="btn btn-success m-2"
+                    onClick={() => {
+                      setShowModal(true);
+                    }}
+                  >
+                    Confirmer La commande
+                  </button>
                 </div>
               </div>
             </div>
@@ -142,7 +151,16 @@ export default function Products() {
           setShowModal(false);
         }}
         onSubmit={submitOrder}
+        loading={loading}
       ></CartModal>
+      <SuccessModal
+        show={showSuccessModal}
+        price={calculTotal()}
+        closeModal={() => {
+          setShowSuccessModal(false);
+          dispatch(CartActions.reset());
+        }}
+      ></SuccessModal>
       <div className="container-fluid cart__welcome-container">
         <h1 className="products__header">Panier</h1>
       </div>
