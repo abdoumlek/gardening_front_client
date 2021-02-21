@@ -70,7 +70,7 @@ export default function CartModal({ show, closeModal, onSubmit, loading }) {
               </div>
 
               <div className="text-center mt-5">
-                <button className="btn  btnSubmitForm mb-5" type="button" onClick={onSubmit}>
+                <button className="btn  btnSubmitForm mb-5" type="button" disabled={loading || !name?.length || !address?.length || !phoneNumber?.length} onClick={onSubmit}>
                 {loading && (
                   <span className="min-width-button">
                     <span
