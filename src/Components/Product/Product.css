@@ -1,13 +1,22 @@
 .product__card-content {
   position: relative;
 }
-.product__badge {
+.product__badge{
   position: absolute;
-  top: 2rem;
+  top: 0;
   right: 2rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
-  color: green;
-  font-size: 1.2rem;
+  border: 1px solid;
+  font-size: 0.8rem;
   font-weight: bold;
+  padding:0.2rem;
+}
+.product__green-badge {
+  border-color:  green;
+  color: green;
+}
+.product__red-badge {
+  border-color: red;
+  color: red;
 }

@@ -3,7 +3,8 @@ import "./Product.css";
 import ImageLoading from "../ImageLoading/ImageLoading"
 export default function Product({
   id,
-  badge,
+  redBadge,
+  greenBadge,
   imgUrl,
   name,
   description,
@@ -15,8 +16,11 @@ export default function Product({
     <div className="product__card">
       <div className="product__card-content">
       <ImageLoading alt={name} height={150} width={150} imageUrl={imgUrl} />
-        {badge ? (
-          <span className="product__badge py-1 px-3">{badge}</span>
+        {redBadge ? (
+          <span className="product__badge product__red-badge">{redBadge}</span>
+        ) : null}
+        {!redBadge && greenBadge ? (
+          <span className="product__badge product__green-badge">{greenBadge}</span>
         ) : null}
         <h2>{name}</h2>
         <p>{description} </p>

@@ -10,6 +10,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import store from "./Store/CartStore";
 import CartButton from "./Components/CartButton/CartButton";
+import ProductDetails from "./Views/Products/ProductDetails";
 function App() {
   return (
     <Provider store={store}>
@@ -21,8 +22,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/products">
+          <Route exact path="/products">
             <Products />
+          </Route>
+          <Route path="/products">
+            <ProductDetails />
           </Route>
           <Route path="/contacts">
             <Contacts />

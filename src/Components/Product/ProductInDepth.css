@@ -1,0 +1,11 @@
+.product__in-depth h2{
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: capitalize;   
+}
+.product__in-depth h1{
+      text-transform: capitalize;  
+}
+.product__in-depth h3{
+      font-size: 18px;
+}

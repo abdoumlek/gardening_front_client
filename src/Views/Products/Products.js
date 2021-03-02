@@ -5,9 +5,11 @@ import Product from "../../Components/Product/Product";
 import productService from "../../Services/productService";
 import { useDispatch } from "react-redux";
 import * as CartActions from "../../Store/CartActions"
+import {useHistory} from "react-router-dom"
 
 export default function Products() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [products, setProducts] = useState([]);
   const [productsLoading, setProductsLoading] = useState(false);
@@ -30,8 +32,7 @@ export default function Products() {
   }, []);
 
   const openDetails = (id) => {
-    let productToDisplay = products.find((p) => p.id === id);
-    console.log(productToDisplay);
+    history.push("/products/"+id);
   };
   const addToCart = (id) => {
     let productToDisplay = products.find((p) => p.id === id);
@@ -41,7 +42,8 @@ export default function Products() {
   let productsHtml = products.map((p) => (
     <div className="col-12 col-lg-4 text-center mb-5" key={p.id}>
       <Product
-        badge={null}
+        redBadge={p.quantity===0?"En rupture de stock":null}
+        greenBadge={parseFloat(p.discount)>0?"En remise":null}
         name={p.name}
         description={p.category}
         price={p.selling_price}

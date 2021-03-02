@@ -12,6 +12,10 @@
     font-weight: bold;
 }
 
+.black-row{
+    background-color: black;
+}
+
 .Home__title {
     font-size: 60px;
     text-shadow: 2px 2px #0000002f;
