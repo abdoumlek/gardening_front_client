@@ -27,7 +27,7 @@ export default function ProductInDepth({ product }) {
           <h3>Prix : {parseFloat(product.selling_price).toFixed(3)} TND</h3>
           {parseFloat(product.discount) > 0 && (
             <>
-              <h3>En remise : - {parseFloat(product.discount) * 100} %</h3>
+              <h3>Remise : - {parseFloat(product.discount) * 100} %</h3>
               <h3>Prix aprés remise : {(parseFloat(product.selling_price) * (1 - parseFloat(product.discount))).toFixed(3) } TND </h3>
             </>
           )}

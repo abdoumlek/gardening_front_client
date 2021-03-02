@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Contacts.css";
 import messageService from "../../Services/messageService";
 import { toast } from "react-toastify";
+import MessageSuccessModal from "../../Components/SuccessModal/MessageSuccessModal"
 
 export default function Contacts() {
   const [subject, setSubject] = useState("Demander un devis pour une transformation dans mon jardin");
@@ -10,6 +11,7 @@ export default function Contacts() {
   const [email, setEmail] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [message, setMessage] = useState(null);
+  const [displaySuccessModal, setDisplaySuccessModal] = useState(false);
   const sendMessage = () => {
     let content = {
         subject,
@@ -29,6 +31,7 @@ export default function Contacts() {
       try{
       messageService.sendMessage(content);
       toast.success("demande envoyé avec succés");
+      setDisplaySuccessModal(true);
     }catch(e){
         console.error(e);
         toast.error("error occured");
@@ -158,6 +161,7 @@ export default function Contacts() {
           </div>
         </div>
       </div>
+      <MessageSuccessModal show={displaySuccessModal} closeModal={()=>setDisplaySuccessModal(false)}></MessageSuccessModal>
     </div>
   );
 }
