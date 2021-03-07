@@ -4,22 +4,21 @@ import productService from "../../Services/productService";
 import ProductInDepth from "../../Components/Product/ProductInDepth";
 import { useLocation } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
+import { toast } from "react-toastify";
 
 export default function ProductDetails() {
   const location = useLocation();
   const [product, setProduct] = useState([]);
   const [productLoading, setProductLoading] = useState(false);
-  const [productError, setProductError] = useState(false);
 
   useEffect(() => {
     const fetchProductById = async () => {
       setProductLoading(true);
-      setProductError(false);
       try {
         let response = await productService.getProductById(id);
         setProduct(response.data);
       } catch {
-        setProductError(true);
+        toast.error("Une erreur est survenue veuillez réessayer plus tard");
       } finally {
         setProductLoading(false);
       }
