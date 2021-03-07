@@ -1,5 +1,4 @@
 import React from "react";
-import ImageLoading from "../ImageLoading/ImageLoading";
 import { useDispatch } from "react-redux";
 import * as CartActions from "../../Store/CartActions";
 import { toast } from "react-toastify";
@@ -14,11 +13,10 @@ export default function ProductInDepth({ product }) {
     <div className="product__in-depth container mb-5">
       <div className="row">
         <div className="col-12 col-lg-4">
-          <ImageLoading
-            width={300}
-            height={400}
-            imageUrl={product.photo}
-          ></ImageLoading>
+          <img
+            src={process.env.REACT_APP_UPLOAD_FOLDER+product.photo}
+            alt={product.name}
+          />
         </div>
         <div className="col-12 col-lg-8">
           <h2>{product.name}</h2>

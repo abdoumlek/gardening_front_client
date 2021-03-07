@@ -1,6 +1,5 @@
 import React from "react";
 import "./Gallery.css";
-import ImageLoading from "../ImageLoading/ImageLoading"
 
 
 export default function Gallery({ img, name, description }) {
@@ -8,7 +7,7 @@ export default function Gallery({ img, name, description }) {
     <div className="col-12 col-lg-4">
       <div className="portfolio my-3">
         <div className="portfolio-image text-center">
-          <ImageLoading className="rounded img-fluid " alt={name} height={400} width={400} imageUrl={img} />
+          <img className="rounded img-fluid " alt={name} src={process.env.REACT_APP_THUMBNAILS_FOLDER + img} />
         </div>
         <div className="portfolio-details text-center pt-5">
           <h3>{name}</h3>

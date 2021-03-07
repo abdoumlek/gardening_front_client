@@ -43,10 +43,10 @@ export default function Products() {
     <div className="col-12 col-lg-4 text-center mb-5" key={p.id}>
       <Product
         redBadge={p.quantity===0?"En rupture de stock":null}
-        greenBadge={parseFloat(p.discount)>0?"En remise":null}
+        greenBadge={parseFloat(p.discount)>0?"Promo":null}
         name={p.name}
         description={p.category}
-        price={p.selling_price}
+        price={(1-parseFloat(p.discount)) * p.selling_price}
         imgUrl={p.photo}
         id={p.id}
         openDetails={openDetails}

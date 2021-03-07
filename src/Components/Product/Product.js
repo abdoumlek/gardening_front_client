@@ -1,6 +1,5 @@
 import React from "react";
 import "./Product.css";
-import ImageLoading from "../ImageLoading/ImageLoading"
 export default function Product({
   id,
   redBadge,
@@ -15,7 +14,7 @@ export default function Product({
   return (
     <div className="product__card">
       <div className="product__card-content">
-      <ImageLoading alt={name} height={150} width={150} imageUrl={imgUrl} />
+      <img alt={name} src={process.env.REACT_APP_THUMBNAILS_FOLDER + imgUrl} />
         {redBadge ? (
           <span className="product__badge product__red-badge">{redBadge}</span>
         ) : null}

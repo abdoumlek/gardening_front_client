@@ -1,5 +1,4 @@
 import React from "react";
-import ImageLoading from "../ImageLoading/ImageLoading";
 
 export default function CartItem({
   discount,
@@ -15,7 +14,7 @@ export default function CartItem({
   return (
     <div className="row mb-3 underlined">
       <div className="col-4">
-        <ImageLoading alt={name} height={150} width={150} imageUrl={imgUrl} />
+        <img src={process.env.REACT_APP_THUMBNAILS_FOLDER + imgUrl} alt={name} />
       </div>
       <div className="col-2">
         <h2>{name}</h2>
