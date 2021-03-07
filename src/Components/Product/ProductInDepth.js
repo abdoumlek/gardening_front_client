@@ -14,7 +14,7 @@ export default function ProductInDepth({ product }) {
       <div className="row">
         <div className="col-12 col-lg-4">
           <img
-            src={process.env.REACT_APP_UPLOAD_FOLDER+product.photo}
+            src={process.env.REACT_APP_UPLOADS_FOLDER+product.photo}
             alt={product.name}
           />
         </div>
