@@ -1,7 +1,7 @@
 .products__welcome-container {
   min-height: 300px;
   height: 40vh;
-  background-image: url("https://landscaping.vamtam.com/wp-content/uploads/2017/09/Header-shop.jpg");
+  background-image: url(/Header-shop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -12,7 +12,7 @@
 .roses__welcome-container {
   min-height: 300px;
   height: 60vh;
-  background-image: url(https://landscaping.vamtam.com/wp-content/uploads/2017/09/Pic-1.jpg);
+  background-image: url(/header-cart.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
