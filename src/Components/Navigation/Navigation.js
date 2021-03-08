@@ -39,6 +39,7 @@ export default function Navigation() {
     <div className="w-100">
       <div className="navbar navbar-expand-lg position-absolute w-100">
         <Link to="/" className="navbar-brand">
+          <img className="logo" src="/yellow-logo.png" alt="Plantes & Jardins"/>
           Plantes & jardins
         </Link>
         <button

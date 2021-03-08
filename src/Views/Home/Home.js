@@ -1,16 +1,14 @@
-import React ,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Gallery from "../../Components/Gallery/Gallery";
 import galleriesService from "../../Services/galleriesService";
 
 import "./Home.css";
 export default function Home() {
-
-
   const [galleries, setgalleries] = useState([]);
   // const [galleriesLoading, setgalleriesLoading] = useState(false);
   // const [galleriesError, setgalleriesrror] = useState(false);
-  
+
   useEffect(() => {
     const fetchgalleries = async () => {
       // setgalleriesLoading(true);
@@ -18,37 +16,41 @@ export default function Home() {
       try {
         let response = await galleriesService.getGalleries();
         setgalleries(response.data);
-
-      } catch(e) {
+      } catch (e) {
         // setgalleriesrror(true);
-
       } finally {
         // setgalleriesLoading(false);
       }
     };
     fetchgalleries();
   }, []);
-  
+
   let galleryHtml = galleries?.map((g) => (
-    <Gallery key={g.id} name={g.name} description={g.description} img={g.photo} />
+    <Gallery
+      key={g.id}
+      name={g.name}
+      description={g.description}
+      img={g.photo}
+    />
   ));
   return (
     <div>
       <div className="home__welcome">
         <div className="container-fluid Home__welcome-container">
           <div className="text-container mt-lg-4">
-            <h1 className="Home__title">Plantes & jardins</h1>
+            {/* <h1 className="Home__title">Plantes & jardins</h1>
             <p className="Home__paragraph">
               Un beau jardin pour une belle maison
-            </p>
-            <Link
-              className="btn btn-outline-light Home__bnt-about-us"
-              type="submit"
-              to="/contacts"
-            >
-              Demander un devis
-            </Link>
+            </p> */}
+            <img src="/pjb_text.png" alt="slogon" />
           </div>
+          <Link
+            className="btn btn-outline-light Home__bnt-about-us"
+            type="submit"
+            to="/contacts"
+          >
+            Demander un devis
+          </Link>
         </div>
         <div className="container welcome__services">
           <div className="row services p-5">
