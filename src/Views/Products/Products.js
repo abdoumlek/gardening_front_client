@@ -56,7 +56,7 @@ export default function Products() {
   ));
   let content = productsHtml;
   if (productsLoading) content = <div className="row mt-5 mb-5"><Loader/></div>;
-  if (!products?.length) content = <div className="row mt-5 mb-5">Veuillez Patienter le site est en maintenance</div>;
+  if (!productsLoading && !products?.length) content = <div className="row mt-5 mb-5">Veuillez Patienter le site est en maintenance</div>;
   if (productsError) content = (<div className="row mt-5 mb-5"><h1>Une erreur s'est produite veuillez réessayer plus tard</h1></div>);
   return (
     <div>
