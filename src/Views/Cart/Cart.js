@@ -51,7 +51,7 @@ export default function Products() {
     currentCart.forEach((c) => {
       price += c.product.selling_price * c.count * (1 - c.product.discount);
     });
-    return Number(price + 5).toFixed(3);
+    return Number(price + 7).toFixed(3);
   };
   const itemsCount = () => {
     let count = 0;
@@ -116,7 +116,7 @@ export default function Products() {
 
               <div className="row mt-3">
                 <div className="col-7">Prix de livraison</div>
-                <div className="col-5">5.000 TND</div>
+                <div className="col-5">7.000 TND</div>
               </div>
               <div className="row mt-3">
                 <div className="col-7 font-weight-bold">Total à Payer</div>
