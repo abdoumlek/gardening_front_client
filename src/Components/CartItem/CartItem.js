@@ -1,4 +1,5 @@
 import React from "react";
+import "./CartItem.css"
 
 export default function CartItem({
   discount,
@@ -12,25 +13,20 @@ export default function CartItem({
   quantity,
 }) {
   return (
-    <div className="row mb-3 underlined">
-      <div className="col-4">
-        <img src={process.env.REACT_APP_THUMBNAILS_FOLDER + imgUrl} alt={name} />
-      </div>
-      <div className="col-2">
-        <h2>{name}</h2>
-
-        <button
-          className="btn btn-danger m-2"
+    <tr className="cart__item">
+      <td><img src={process.env.REACT_APP_THUMBNAILS_FOLDER + imgUrl} alt={name} />
+      <span className="m-2">{name} </span>
+      <button
+          className="btn btn-link text-danger m-2"
           onClick={() => {
             delete_item();
           }}
         >
           Supprimer
         </button>
-      </div>
-      <div className="col-2">
-        <button
-          className="btn btn-warning m-2"
+    </td>
+      <td><button
+          className="btn btn-link text-primary mx-1"
           onClick={() => {
             decrease();
           }}
@@ -39,23 +35,16 @@ export default function CartItem({
         </button>
         {quantity}
         <button
-          className="btn btn-success m-2"
+          className="btn btn-link text-primary mx-1"
           onClick={() => {
             increase();
           }}
         >
           +
         </button>
-      </div>
-      <div className="col-2">
-        <p>
-          Prix <span>{Number(price * (1 - discount)).toFixed(3)} TND</span>
-        </p>
-      </div>
-      <div className="col-2">
-        {Number(price * (1 - discount) * quantity).toFixed(3)} TND
-      </div>
-
-    </div>
+    </td>
+      <td>Prix {Number(price * (1 - discount)).toFixed(3)} TND</td>
+      <td>{Number(price * (1 - discount) * quantity).toFixed(3)} TND</td>
+    </tr>
   );
 }

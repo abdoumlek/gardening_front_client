@@ -91,18 +91,31 @@ export default function Products() {
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-9 ">
+          <div className="col-12 col-md-9 max-height-800">
             <div className="container">
-              <div className="row underlined mb-3 pb-3">
+              {/* <div className="row underlined mb-3 pb-3">
                 <div className="col-6 table__header">Produit</div>
                 <div className="col-2 table__header">Quantité</div>
                 <div className="col-2 table__header">Prix Unitaire</div>
                 <div className="col-2 table__header">Prix Total</div>
-              </div>
-              {productsHtml}
+              </div> */}
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Plante</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix unitaire</th>
+                    <th scope="col">Prix total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 {productsHtml}
+                </tbody>
+              </table>
+              {/* {productsHtml} */}
             </div>
           </div>
-          <div className="col-3 ">
+          <div className="col-12 col-md-3 max-height-800 ">
             <div className="container">
               <div className="row mb-3 ">
                 <div className="col font-weight-bold text-center">
