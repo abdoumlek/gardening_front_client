@@ -61,7 +61,7 @@ export default function Products() {
   return (
     <div>
       <div className="container-fluid products__welcome-container">
-        <h1 className="products__header">Shop</h1>
+        <h1 className="products__header">Nos Plantes</h1>
       </div>
       <div className="container">
         <div className="row mt-5 mb-5">{content}</div>

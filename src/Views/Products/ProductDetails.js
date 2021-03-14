@@ -15,7 +15,7 @@ export default function ProductDetails() {
     const fetchProductById = async () => {
       setProductLoading(true);
       try {
-        let response = await productService.getProductById(id);
+        let response = await productService?.getProductById(id);
         setProduct(response.data);
       } catch {
         toast.error("Une erreur est survenue veuillez réessayer plus tard");
@@ -23,7 +23,7 @@ export default function ProductDetails() {
         setProductLoading(false);
       }
     };
-    const id = location.pathname.split("products/")[1];
+    const id = location?.pathname.split("products/")[1];
     if (id?.length) fetchProductById(id);
   }, [location]);
 

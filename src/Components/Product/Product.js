@@ -12,14 +12,23 @@ export default function Product({
   addToCart,
 }) {
   return (
-    <div className="product__card">
-      <div className="product__card-content">
-      <img alt={name} src={process.env.REACT_APP_THUMBNAILS_FOLDER + imgUrl} />
+    <div
+      className="product__card"
+    >
+      <div className="product__card-content"  onClick={() => {
+        openDetails(id);
+      }}>
+        <img
+          alt={name}
+          src={process.env.REACT_APP_THUMBNAILS_FOLDER + imgUrl}
+        />
         {redBadge ? (
           <span className="product__badge product__red-badge">{redBadge}</span>
         ) : null}
         {!redBadge && greenBadge ? (
-          <span className="product__badge product__green-badge">{greenBadge}</span>
+          <span className="product__badge product__green-badge">
+            {greenBadge}
+          </span>
         ) : null}
         <h2>{name}</h2>
         <p>{description} </p>

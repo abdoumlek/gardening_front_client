@@ -12,6 +12,10 @@
     font-weight: bold;
 }
 
+.pjb__text{
+    max-width: calc(100vw - 30px);
+}
+
 .black-row{
     background-color: black;
 }
@@ -41,6 +45,14 @@
     font-weight: 600;
     margin:5px;
 }
+
+
+@media only screen and (max-width: 720px) {
+    .Home__bnt-about-us {
+        margin-top: 80px;
+    }
+}
+
 
 .Home__bnt-about-us:hover {
     color: rgb(42, 125, 46);
@@ -88,7 +100,12 @@
         margin-top: -90px;
     }
 }
-
+.no-underline:hover{
+    text-decoration: none
+}
+.services-details{
+    color:black;
+}
 @media (max-width: 992px) {
     .services-details {
         padding-block-end: 50px;

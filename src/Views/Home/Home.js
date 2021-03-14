@@ -42,12 +42,11 @@ export default function Home() {
             <p className="Home__paragraph">
               Un beau jardin pour une belle maison
             </p> */}
-            <img src="/pjb_text.png" alt="slogon" />
+            <img className="pjb__text" src="/pjb_text.png" alt="slogon" />
           </div>
           <Link
             className="btn btn-outline-light Home__bnt-about-us"
-            type="submit"
-            to="/contacts"
+            to="/#/contacts"
           >
             Demander un devis
           </Link>
@@ -55,48 +54,55 @@ export default function Home() {
         <div className="container welcome__services">
           <div className="row services p-5">
             <div className="col-12 col-lg-4 text-center services-details">
-              <img
-                src={require("../../assets/img/garden.svg")}
-                alt="garden"
-                className="icon"
-              ></img>
-              <h2 className="mt-3">Jardins</h2>
-              <p>
-                Nous vous proposons une transformation total de votre jardin en
-                prenant soin de toutes vos demandes
-              </p>
-              <Link to="/contacts" className="plus-link">
-                Demander un devis
+              <Link to="/products" className="d-block text-dark no-underline">
+                <img
+                  src={require("../../assets/img/plant.svg")}
+                  alt="plant"
+                  className="icon"
+                ></img>
+                <h2 className="mt-3">Plantes</h2>
+                <p>
+                  Nous vous proposons une larges collection d'arbres, fleurs et
+                  d'outils de jardinage
+                </p>
+                <span to="/products" className="plus-link">
+                  En savoir plus
+                </span>
+              </Link>
+            </div>
+
+            <div className="col-12 col-lg-4 text-center services-details">
+              <Link to="/contacts" className="d-block text-dark no-underline">
+                <img
+                  src={require("../../assets/img/garden.svg")}
+                  alt="garden"
+                  className="icon"
+                ></img>
+                <h2 className="mt-3">Jardins</h2>
+                <p>
+                  Nous vous proposons une transformation total de votre jardin
+                  en prenant soin de toutes vos demandes
+                </p>
+                <span className="plus-link">
+                  Demander un devis
+                </span>
               </Link>
             </div>
             <div className="col-12 col-lg-4 text-center services-details">
-              <img
-                src={require("../../assets/img/plant.svg")}
-                alt="plant"
-                className="icon"
-              ></img>
-              <h2 className="mt-3">Produits</h2>
-              <p>
-                Nous vous proposons une larges collections d'arbres, fleurs et
-                d'outils de jardinage
-              </p>
-              <Link to="/products" className="plus-link">
-                En savoir plus
-              </Link>
-            </div>
-            <div className="col-12 col-lg-4 text-center services-details">
-              <img
-                src={require("../../assets/img/shovel.svg")}
-                alt="entretien"
-                className="icon"
-              ></img>
-              <h2 className="mt-3">Entretien</h2>
-              <p>
-                Nous vous proposons d'entrenir votre jardin pour qu'il garde sa
-                splendeur toute l'année
-              </p>
-              <Link to="/contacts" className="plus-link">
-                Demander un devis
+              <Link to="/contacts" className="d-block text-dark no-underline">
+                <img
+                  src={require("../../assets/img/shovel.svg")}
+                  alt="entretien"
+                  className="icon"
+                ></img>
+                <h2 className="mt-3">Entretien</h2>
+                <p>
+                  Nous vous proposons d'entrenir votre jardin pour qu'il garde
+                  sa splendeur toute l'année
+                </p>
+                <span to="/contacts" className="plus-link">
+                  Demander un devis
+                </span>
               </Link>
             </div>
           </div>
@@ -109,11 +115,16 @@ export default function Home() {
               Des offres vertes et fleuries pour votre extérieur et intérieur
             </h2>
             <p>
-              Beaucoup de clients nous ont déjà fait confiance et nous ont
-              authorisé à vous donner un apeçu des transformations faites sur
-              leurs jardin.
+              Beaucoup de clients nous font déjà confiance et nous ont authorisé
+              à vous donner un apeçu des transformations faites sur leurs
+              jardin.
             </p>
-            <p>N'hésiter plus demander vous aussi un devis c'est GRATUIT</p>
+            <p>
+              N'hésiter plus demander vous aussi un devis c'est{" "}
+              <Link to="/contacts" className="plus-link">
+                GRATUIT
+              </Link>
+            </p>
           </div>
         </div>
         <div className="row mt-5">
