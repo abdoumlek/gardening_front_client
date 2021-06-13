@@ -42,7 +42,7 @@ export default function Products() {
   let productsHtml = products.map((p) => (
     <div className="col-12 col-lg-4 text-center mb-5" key={p.id}>
       <Product
-        redBadge={p.quantity===0?"En rupture de stock":null}
+        redBadge={parseInt(p.quantity)===0?"En rupture de stock":null}
         greenBadge={parseFloat(p.discount)>0?"Promo":null}
         name={p.name}
         description={p.category}

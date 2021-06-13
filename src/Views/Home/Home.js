@@ -46,7 +46,7 @@ export default function Home() {
           </div>
           <Link
             className="btn btn-outline-light Home__bnt-about-us"
-            to="/#/contacts"
+            to="/contacts"
           >
             Demander un devis
           </Link>

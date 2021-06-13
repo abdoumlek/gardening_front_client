@@ -29,7 +29,7 @@ export default function ProductInDepth({ product }) {
               <h3>Prix aprés remise : {(parseFloat(product.selling_price) * (1 - parseFloat(product.discount))).toFixed(3) } TND </h3>
             </>
           )}
-          <h3>{product.quantity ? "En stock" : "En rupture de stock"}</h3>
+          <h3>{parseInt(product.quantity)!==0 ? "En stock" : "En rupture de stock"}</h3>
           <button className="btn btn-success" onClick={() => addToCart()}>
             Ajouter au panier
           </button>

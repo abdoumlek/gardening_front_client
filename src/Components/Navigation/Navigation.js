@@ -18,17 +18,16 @@ export default function Navigation() {
     setProductsActive(false);
     setContractsActive(false);
     setAccueilActive(false);
-    console.log(location.pathname)
-    console.log(location)
+    console.log(location.pathname);
 
     switch (location.pathname) {
-      case "/#/cart":
+      case "/cart":
         setCartActive(true);
         break;
-      case "/#/products":
+      case "/products":
         setProductsActive(true);
         break;
-      case "/#/contacts":
+      case "/contacts":
         setContractsActive(true);
         break;
       default:
